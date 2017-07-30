@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Fred_Kang</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-07-30T12:46:57.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Fred_Kang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test3</title>
+    <link href="http://yoursite.com/2017/07/30/test3/"/>
+    <id>http://yoursite.com/2017/07/30/test3/</id>
+    <published>2017-07-30T10:11:08.000Z</published>
+    <updated>2017-07-30T12:46:57.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>test2</title>
+    <link href="http://yoursite.com/2017/07/30/test2/"/>
+    <id>http://yoursite.com/2017/07/30/test2/</id>
+    <published>2017-07-30T10:07:55.000Z</published>
+    <updated>2017-07-30T10:09:49.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="life" scheme="http://yoursite.com/categories/life/"/>
+    
+    
+      <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>test1</title>
+    <link href="http://yoursite.com/2017/07/30/test1/"/>
+    <id>http://yoursite.com/2017/07/30/test1/</id>
+    <published>2017-07-30T10:06:24.000Z</published>
+    <updated>2017-07-30T10:06:50.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="thinking" scheme="http://yoursite.com/categories/thinking/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>test</title>
+    <link href="http://yoursite.com/2017/07/30/test/"/>
+    <id>http://yoursite.com/2017/07/30/test/</id>
+    <published>2017-07-30T10:05:33.000Z</published>
+    <updated>2017-07-30T10:06:14.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="technology" scheme="http://yoursite.com/categories/technology/"/>
+    
+    
+      <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2017/07/30/hello-world/"/>
+    <id>http://yoursite.com/2017/07/30/hello-world/</id>
+    <published>2017-07-30T09:14:52.000Z</published>
+    <updated>2017-07-30T09:14:52.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
