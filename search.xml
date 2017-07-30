@@ -1,43 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[test3]]></title>
-    <url>%2F2017%2F07%2F30%2Ftest3%2F</url>
-    <content type="text"><![CDATA[欲哭无泪]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[test2]]></title>
-    <url>%2F2017%2F07%2F30%2Ftest2%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>life</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[test1]]></title>
-    <url>%2F2017%2F07%2F30%2Ftest1%2F</url>
+    <title><![CDATA[思考]]></title>
+    <url>%2F2017%2F07%2F30%2F%E6%80%9D%E8%80%83%2F</url>
     <content type="text"></content>
       <categories>
         <category>thinking</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[test]]></title>
-    <url>%2F2017%2F07%2F30%2Ftest%2F</url>
+    <title><![CDATA[技术]]></title>
+    <url>%2F2017%2F07%2F30%2F%E6%8A%80%E6%9C%AF%2F</url>
     <content type="text"></content>
       <categories>
         <category>technology</category>
       </categories>
-      <tags>
-        <tag>测试</tag>
-      </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2017%2F07%2F30%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[生活]]></title>
+    <url>%2F2017%2F07%2F30%2F%E7%94%9F%E6%B4%BB%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>life</category>
+      </categories>
   </entry>
 </search>
