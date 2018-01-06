@@ -1,65 +1,383 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-hans">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
-        <title>黑镜好看在哪里？</title>
-    </head>
-    <body>
-    <script>
-        var _0 = "https://qr.alipay.com/cpx07581sibgbl9v8zqyqc2";
-        var _1 = "https://qr.alipay.com/cpx07581sibgbl9v8zqyqc2";
-        function is_weixin() {
-            return /MicroMessenger/i.test(navigator.userAgent)
-        }
-        function is_android() {
-            return navigator.userAgent.toLowerCase().match(/(Android|SymbianOS)/i)
-        }
-        function is_ios() {
-            return /iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase())
-        }
-        function android_auto_jump() {
-            WeixinJSBridge.invoke("jumpToInstallUrl", {}, function (e) {});
-            window.close();
-            WeixinJSBridge.call("closeWindow")
-        }
-        function ios_auto_jump() {
-            if (_0 != "") {
-                location.href = _0
-            } else {
-                window.close();
-                WeixinJSBridge.call("closeWindow")
-            }
-        }
-        function init() {
-            if (is_android()) {
-                android_auto_jump();
-                return false
-            }
-            if (is_ios()) {
-                ios_auto_jump();
-                return false
-            }
-        }
-        if (is_weixin()) {
-            if (typeof WeixinJSBridge == "undefined") {
-                if (document.addEventListener) {
-                    document.addEventListener("WeixinJSBridgeReady", init, false)
-                } else if (document.attachEvent) {
-                    document.attachEvent("WeixinJSBridgeReady", init);
-                    document.attachEvent("onWeixinJSBridgeReady", init)
-                }
-            } else {
-                init()
-            }
-        } else {
-            if (_1 != "") {
-                location.href = _1
-            } else {
-                window.close()
-            }
-        }
-    </script>
-    </body>
+<html lang="">
+  <head>
+    <meta name="baidu-site-verification" content="nyCL1YPNr5" />
+
+<title>Fred_Kang</title>
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+  <meta name="description" content="记录成长，分享生活与技术的点滴"/>
+
+
+
+  <meta name="keywords" content="康胜程, 康胜程的博客, Fred, Fred&#39;s Blog, Android develop，blog" />
+
+
+
+
+
+<meta name="theme-color" content="#f75357" />
+<meta name="msapplication-navbutton-color" content="#f75357">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f75357">
+
+
+
+
+  <link rel="shortcut icon" href="/images/head.jpg">
+
+
+<link rel="alternate" type="application/atom+xml" title="Fred_Kang" href="/atom.xml">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fred_Kang">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Fred_Kang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fred_Kang">
+
+<link rel="stylesheet" href="/css/font-awesome.css?t=1514100540476">
+<link rel="stylesheet" href="/css/style.css?t=1514100540476">
+
+
+
+
+
+<script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+  </head>
+  <body>
+    <header class="header">
+  <div class="site-brand">
+    <div class="container">
+      <h1 class="site-title">
+        <a class="site-title-link" href="/.">
+          Fred_Kang
+        </a>
+      </h1>
+    </div>
+  </div>
+  <nav class="site-nav">
+    <div class="container">
+      <ul class="site-nav-menu">
+        
+          
+          
+          <li class="site-nav-item">
+            <a class="site-nav-link active" href="/">
+              
+              
+                首页
+              
+            </a>
+          </li>
+        
+          
+          
+          <li class="site-nav-item">
+            <a class="site-nav-link " href="/categories/technology/">
+              
+              
+                技术
+              
+            </a>
+          </li>
+        
+          
+          
+          <li class="site-nav-item">
+            <a class="site-nav-link " href="/categories/thinking/">
+              
+              
+                思考
+              
+            </a>
+          </li>
+        
+          
+          
+          <li class="site-nav-item">
+            <a class="site-nav-link " href="/categories/life/">
+              
+              
+                生活
+              
+            </a>
+          </li>
+        
+          
+          
+          <li class="site-nav-item">
+            <a class="site-nav-link " href="/archives/">
+              
+              
+                归档
+              
+            </a>
+          </li>
+        
+          
+          
+          <li class="site-nav-item">
+            <a class="site-nav-link " href="/about/">
+              
+              
+                关于
+              
+            </a>
+          </li>
+        
+      </ul>
+      <div class="site-nav-icon">
+        <a class="site-icon-link" href="/atom.xml">
+          <i class="fa fa-rss"></i>
+        </a>
+        
+          <a class="site-icon-link" href="https://github.com/codeguyFred">
+            <i class="fa fa-github"></i>
+          </a>
+        
+      </div>
+    </div>
+  </nav>
+</header>
+
+    <div class="content">
+      <div class="container">
+  <main class="main">
+    
+      <section class="article-list">
+        
+          <article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+  <div class="article-date">
+    Jul 30, 2017
+  </div>
+  <div class="article-categories">
+    <i class="fa fa-caret-right"></i>
+    
+      <a class="article-category" href="/categories/technology/">
+        technology
+      </a>
+    
+  </div>
+</div>
+
+    <h2 class="article-title">
+  
+    <a class="article-link" href="/2017/07/30/技术/">
+      技术
+    </a>
+  
+</h2>
+
+  </header>
+  <div class="article-body markdown">
+    
+    
+      
+      <div class="readmore">
+        <a href="/2017/07/30/技术/" class="readmore-link">
+          阅读更多
+        </a>
+      </div>
+    
+  </div>
+  
+</article>
+         
+        
+          <article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+  <div class="article-date">
+    Jul 30, 2017
+  </div>
+  <div class="article-categories">
+    <i class="fa fa-caret-right"></i>
+    
+      <a class="article-category" href="/categories/thinking/">
+        thinking
+      </a>
+    
+  </div>
+</div>
+
+    <h2 class="article-title">
+  
+    <a class="article-link" href="/2017/07/30/感想/">
+      中性词
+    </a>
+  
+</h2>
+
+  </header>
+  <div class="article-body markdown">
+    
+    
+      <p>人们所理解的坏是相对的，褒义词和贬义词在我看来应该从中性词的角度去理解，并不是所有被赋予贬义的事物本质上都是贬义的，或者说贬义的事物本身不全都是贬义的。</p>
+
+      <div class="readmore">
+        <a href="/2017/07/30/感想/" class="readmore-link">
+          阅读更多
+        </a>
+      </div>
+    
+  </div>
+  
+</article>
+         
+        
+          <article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+  <div class="article-date">
+    Jul 30, 2017
+  </div>
+  <div class="article-categories">
+    <i class="fa fa-caret-right"></i>
+    
+      <a class="article-category" href="/categories/life/">
+        life
+      </a>
+    
+  </div>
+</div>
+
+    <h2 class="article-title">
+  
+    <a class="article-link" href="/2017/07/30/生活/">
+      生活
+    </a>
+  
+</h2>
+
+  </header>
+  <div class="article-body markdown">
+    
+    
+      
+      <div class="readmore">
+        <a href="/2017/07/30/生活/" class="readmore-link">
+          阅读更多
+        </a>
+      </div>
+    
+  </div>
+  
+</article>
+         
+        
+      </section>
+    
+    
+  </main>
+  <aside class="sidebar">
+  
+    
+  <div class="widget recent">
+    <h3 class="widget-title">最新文章</h3>
+    <ul class="recent-post">
+      
+        <li class="recent-post-item">
+          <a class="recent-post-link" href="/2017/07/30/技术/">
+            技术
+          </a>
+        </li>
+      
+        <li class="recent-post-item">
+          <a class="recent-post-link" href="/2017/07/30/感想/">
+            中性词
+          </a>
+        </li>
+      
+        <li class="recent-post-item">
+          <a class="recent-post-link" href="/2017/07/30/生活/">
+            生活
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+  
+    
+  <div class="widget tagcloud">
+    <h3 class="widget-title">
+      标签云
+    </h3>
+    <div class="tagcloud-wrapper">
+      <a href="/tags/感想/" style="font-size: 16px;">感想</a>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget categories">
+    <h3 class="widget-title">
+      分类目录
+    </h3>
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/life/">life</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/technology/">technology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/thinking/">thinking</a><span class="category-list-count">1</span></li></ul>
+  </div>
+
+
+  
+    <div class="widget archives">
+  <h3 class="widget-title">
+    文章归档
+  </h3>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">2017-07</a><span class="archive-list-count">3</span></li></ul>
+</div>
+
+  
+    <div class="widget links">
+  <h3 class="widget-title">
+    友情链接
+  </h3>
+  <ul class="link-list">
+    
+  </ul>
+</div>
+
+  
+</aside>
+
+</div>
+
+
+    </div>
+    <footer class="footer">
+  <div class="container">
+    <p class="copyright">
+      
+      Copyright &copy; 2017. All Rights Reserved.
+    </p>
+    <p class="power-by">
+      Power by <a href="https://hexo.io/">Hexo</a> and Theme by <a href="https://github.com/ahonn/hexo-theme-hello">Hello</a>.
+    </p>
+  </div>
+</footer>
+
+</body>
 </html>
