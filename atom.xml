@@ -44,22 +44,6 @@
   </entry>
   
   <entry>
-    <title>技术</title>
-    <link href="http://yoursite.com/2017/07/30/%E6%8A%80%E6%9C%AF/"/>
-    <id>http://yoursite.com/2017/07/30/技术/</id>
-    <published>2017-07-30T14:14:56.000Z</published>
-    <updated>2017-07-30T14:17:08.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="technology" scheme="http://yoursite.com/categories/technology/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>中性词</title>
     <link href="http://yoursite.com/2017/07/30/%E6%84%9F%E6%83%B3/"/>
     <id>http://yoursite.com/2017/07/30/感想/</id>
@@ -80,22 +64,6 @@
     
     
       <category term="感想" scheme="http://yoursite.com/tags/%E6%84%9F%E6%83%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>生活</title>
-    <link href="http://yoursite.com/2017/07/30/%E7%94%9F%E6%B4%BB/"/>
-    <id>http://yoursite.com/2017/07/30/生活/</id>
-    <published>2017-07-30T14:04:00.000Z</published>
-    <updated>2017-07-30T14:22:57.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="life" scheme="http://yoursite.com/categories/life/"/>
-    
     
   </entry>
   
