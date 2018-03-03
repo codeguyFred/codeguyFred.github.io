@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-02-27T06:04:59.047Z</updated>
+  <updated>2018-03-03T10:12:28.797Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://yoursite.com/2018/02/27/%E7%BC%96%E8%AF%91%E4%BC%98%E5%8C%96/"/>
     <id>http://yoursite.com/2018/02/27/编译优化/</id>
     <published>2018-02-27T06:03:06.000Z</published>
-    <updated>2018-02-27T06:04:59.047Z</updated>
+    <updated>2018-03-03T10:12:28.797Z</updated>
     
     <content type="html"><![CDATA[<ul>
+<li><a href="https://droidyue.com/blog/2017/04/16/speedup-gradle-building/" target="_blank" rel="external">https://droidyue.com/blog/2017/04/16/speedup-gradle-building/</a></li>
 <li><a href="http://www.yopai.com/show-1-184902-1.html" target="_blank" rel="external">http://www.yopai.com/show-1-184902-1.html</a></li>
 <li><a href="http://blog.csdn.net/xiangyunwan/article/details/72677369" target="_blank" rel="external">http://blog.csdn.net/xiangyunwan/article/details/72677369</a></li>
 <li><a href="http://blog.csdn.net/geyanyan0911/article/details/53117514" target="_blank" rel="external">http://blog.csdn.net/geyanyan0911/article/details/53117514</a></li>
@@ -32,7 +33,7 @@
     <summary type="html">
     
       &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.yopai.com/show-1-184902-1.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.yopai.com/show-1-184902-1.html&lt;/a&gt;&lt;/l
+&lt;li&gt;&lt;a href=&quot;https://droidyue.com/blog/2017/04/16/speedup-gradle-building/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://droidyue.com/blog/20
     
     </summary>
     
