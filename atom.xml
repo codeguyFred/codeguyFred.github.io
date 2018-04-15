@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-15T09:37:03.000Z</updated>
+  <updated>2018-04-15T09:39:05.074Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android</title>
+    <link href="http://yoursite.com/2018/04/15/Android/"/>
+    <id>http://yoursite.com/2018/04/15/Android/</id>
+    <published>2018-04-15T09:15:58.000Z</published>
+    <updated>2018-04-15T09:39:05.074Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="technology" scheme="http://yoursite.com/categories/technology/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python</title>
+    <link href="http://yoursite.com/2018/04/15/Python/"/>
+    <id>http://yoursite.com/2018/04/15/Python/</id>
+    <published>2018-04-15T09:15:58.000Z</published>
+    <updated>2018-04-15T09:39:32.288Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="technology" scheme="http://yoursite.com/categories/technology/"/>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>代码大全2</title>
@@ -50,8 +86,8 @@
   
   <entry>
     <title>旅行</title>
-    <link href="http://yoursite.com/2018/04/15/%E6%97%85%E8%A1%8C/"/>
-    <id>http://yoursite.com/2018/04/15/旅行/</id>
+    <link href="http://yoursite.com/2018/04/15/%E6%97%85%E8%A1%8C%E7%9A%84%E5%89%AF%E6%9C%AC/"/>
+    <id>http://yoursite.com/2018/04/15/旅行的副本/</id>
     <published>2018-04-15T09:15:58.000Z</published>
     <updated>2018-04-15T09:35:00.677Z</updated>
     
