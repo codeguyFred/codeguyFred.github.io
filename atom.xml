@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-03T10:12:28.797Z</updated>
+  <updated>2018-04-15T09:26:01.067Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>/technology/代码大全2</title>
+    <link href="http://yoursite.com/2018/04/15/technology-%E4%BB%A3%E7%A0%81%E5%A4%A7%E5%85%A82/"/>
+    <id>http://yoursite.com/2018/04/15/technology-代码大全2/</id>
+    <published>2018-04-15T09:15:58.000Z</published>
+    <updated>2018-04-15T09:26:01.067Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>这是一本入门级的书籍，看过Clean Code之后，这本更为详细，不过翻译个人感觉有点拗口，虽然联系上下文就比较清晰
+</code></pre><ul>
+<li><p>第2章 </p>
+<p>  主要讲述了抽象的重要性，合适的抽象概念能有助于更好的传播，给我的感受在开发的过程中，基础模块的构件需要合适的抽象概念能更好的架构项目。像建房子一样开发，确定好抽象模型。</p>
+</li>
+<li>第3章</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;这是一本入门级的书籍，看过Clean Code之后，这本更为详细，不过翻译个人感觉有点拗口，虽然联系上下文就比较清晰
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;第2章 &lt;/p&gt;
+&lt;p&gt;  主要讲述了抽象的重要性，合适的抽象概念能有助于更好的传播，
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>编译优化</title>
