@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-15T09:26:01.067Z</updated>
+  <updated>2018-04-15T09:28:46.182Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>/technology/代码大全2</title>
-    <link href="http://yoursite.com/2018/04/15/technology-%E4%BB%A3%E7%A0%81%E5%A4%A7%E5%85%A82/"/>
-    <id>http://yoursite.com/2018/04/15/technology-代码大全2/</id>
+    <title>代码大全2</title>
+    <link href="http://yoursite.com/2018/04/15/%E4%BB%A3%E7%A0%81%E5%A4%A7%E5%85%A82/"/>
+    <id>http://yoursite.com/2018/04/15/代码大全2/</id>
     <published>2018-04-15T09:15:58.000Z</published>
-    <updated>2018-04-15T09:26:01.067Z</updated>
+    <updated>2018-04-15T09:28:46.182Z</updated>
     
     <content type="html"><![CDATA[<pre><code>这是一本入门级的书籍，看过Clean Code之后，这本更为详细，不过翻译个人感觉有点拗口，虽然联系上下文就比较清晰
 </code></pre><ul>
@@ -40,6 +40,8 @@
     
     </summary>
     
+    
+      <category term="technology" scheme="http://yoursite.com/tags/technology/"/>
     
   </entry>
   
