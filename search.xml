@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[Android]]></title>
-    <url>%2F2018%2F04%2F15%2F180416-0422Fred%E5%91%A8%E6%8A%A5%2F</url>
+    <url>%2F2018%2F04%2F23%2F180416-0422Fred%E5%91%A8%E6%8A%A5%2F</url>
     <content type="text"><![CDATA[由于易道内存紧张问题，所以尝试用多进程的方式去处理，常用于webview或者加载bitmap多的Activity， Android中比较方便就可以分开多个进程,只要在activity节点下设置1android:process=":customroom" 就可以新建一个进程，运行后在控制台可以看到“:”前方是当前应用的包名，当然你也可以用其他包名，多个进程间的对象是不能直接引用的，因为会重走Application的onCreate，也就是单个程序可以有一个或者多个进程。进程进程间通信有很多种方式，比如常见的点击浏览器中的url就可以跳转到某个应用中，其中用到的就是Bundle，包括其他的诸如广播和服务也是，还有的是ContentProvider，Messenger（类似于Handler）。 而常见的是用AIDL(Android Interface Definition Language)，这是后缀为.aidl的文件，这个就是一种定义接口的语言关于aidl可以看这个通讯的例子，相当于客户端和服务端通信，aidl定义的接口作为中介。这篇比较详细，不过我之前看的不是这篇文章，不见了http://cjw-blog.net/2017/02/26/AIDL/ 而Hermes是饿了么的一个IPC（Inter-Process Communication（进程间通信））通讯框架，封装了AIDL，通过注解的形式可以像单一进程那样使用对象或方法。不过我在用到易道的时候还有点问题，具体等下篇成功使用后的总结。 还有一个整理书签的时候发现，双守护进程就是使用两个进程分别装载两个Service，在两个Service中开轮询，互相唤醒（https://blog.csdn.net/aigestudio/article/details/51348408） 简单介绍如下12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.aigestudio.daemon"&gt; &lt;application&gt; &lt;service android:name=".services.DaemonService" android:process=":service" /&gt; &lt;service android:name=".services.ProtectService" android:process=":remote" /&gt; &lt;/application&gt;&lt;/manifest&gt;/** * @author AigeStudio * @since 2016-05-05 */public class DaemonService extends Service &#123; private static boolean sPower = true, isRunning; @Override public IBinder onBind(Intent intent) &#123; return null; &#125; @Override public int onStartCommand(Intent intent, int flags, int startId) &#123; if (!isRunning) &#123; isRunning = true; new Thread(new Runnable() &#123; @Override public void run() &#123; while (sPower) &#123; if (System.currentTimeMillis() &gt;= 123456789000000L) &#123; sPower = false; &#125; Log.d("AigeStudio", "DaemonService"); startService(new Intent(DaemonService.this, ProtectService.class)); SystemClock.sleep(3000); &#125; &#125; &#125;).start(); &#125; return super.onStartCommand(intent, flags, startId); &#125;&#125;/** * @author AigeStudio * @since 2016-05-05 */public class ProtectService extends Service &#123; private static boolean sPower = true, isRunning; @Override public IBinder onBind(Intent intent) &#123; return null; &#125; @Override public int onStartCommand(Intent intent, int flags, int startId) &#123; if (!isRunning) &#123; isRunning = true; new Thread(new Runnable() &#123; @Override public void run() &#123; while (sPower) &#123; if (System.currentTimeMillis() &gt;= 123456789000000L) &#123; sPower = false; &#125; SystemClock.sleep(1500); Log.d("AigeStudio", "ProtectService"); startService(new Intent(ProtectService.this, DaemonService.class)); &#125; &#125; &#125;).start(); &#125; return super.onStartCommand(intent, flags, startId); &#125;&#125; 关于闪屏页的一点处理 崩溃时重走闪屏页 https://www.jianshu.com/p/4fc10026c1f8 返回应用显示广告 https://juejin.im/post/59634e85f265da6c3d6c35ef]]></content>
       <categories>
         <category>technology</category>
@@ -45,9 +45,15 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>%2F2018%2F04%2F03%2F180401-0408Fred%E5%91%A8%E6%8A%A5%2F</url>
+    <title><![CDATA[Android]]></title>
+    <url>%2F2018%2F04%2F08%2F180401-0408Fred%E5%91%A8%E6%8A%A5%2F</url>
     <content type="text"><![CDATA[关于new Handler().post（new Runnable()）的实现原理View添加到布局当中会有延时，addView不是立即生效的。 addView之后对相关View进行查找和搜索可能会是空的; 或者相关的属性，比如getTop(),getY(),getLeft(),getX()可能会是0，或者-1，-2； 而通过post，可以将相关操作加入消息队列中，待addView或者xml相关View初始化完成后进行处理，而post能在主线中回调，是因为在ActivityThread的main方法中已经声明了主线程的消息队列，所以直接post的话是加到了主线程的消息队列中 https://blog.csdn.net/ly502541243/article/details/52062179/ 123public final boolean post(Runnable r)&#123;return sendMessageDelayed(getPostMessage(r), 0);&#125; 关于ActivityThread 也可以通过回调接口判断1234//子View添加public void onViewAdded(View child) &#123;&#125;//子View移除public void onViewRemoved(View child) &#123;&#125; 1234567891011setOnHierarchyChangeListener(new OnHierarchyChangeListener() &#123; @Override public void onChildViewAdded(View parent, View child) &#123; &#125; @Override public void onChildViewRemoved(View parent, View child) &#123; &#125; &#125;);]]></content>
+      <categories>
+        <category>technology</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[编译优化]]></title>

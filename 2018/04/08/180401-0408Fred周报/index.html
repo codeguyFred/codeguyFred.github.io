@@ -3,7 +3,7 @@
   <head>
     <meta name="baidu-site-verification" content="nyCL1YPNr5" />
 
-<title>Python - Fred_Kang</title>
+<title>Android - Fred_Kang</title>
 
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -32,17 +32,20 @@
 
 <link rel="alternate" type="application/atom+xml" title="Fred_Kang" href="/atom.xml">
 
-<meta name="keywords" content="Python">
+<meta name="description" content="关于new Handler().post（new Runnable()）的实现原理View添加到布局当中会有延时，addView不是立即生效的。  addView之后对相关View进行查找和搜索可能会是空的; 或者相关的属性，比如getTop(),getY(),getLeft(),getX()可能会是0，或者-1，-2；  而通过post，可以将相关操作加入消息队列中，待addView或者x">
+<meta name="keywords" content="Android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python">
-<meta property="og:url" content="http://yoursite.com/2018/04/15/Python/index.html">
+<meta property="og:title" content="Android">
+<meta property="og:url" content="http://yoursite.com/2018/04/08/180401-0408Fred周报/index.html">
 <meta property="og:site_name" content="Fred_Kang">
-<meta property="og:updated_time" content="2018-04-15T09:39:32.288Z">
+<meta property="og:description" content="关于new Handler().post（new Runnable()）的实现原理View添加到布局当中会有延时，addView不是立即生效的。  addView之后对相关View进行查找和搜索可能会是空的; 或者相关的属性，比如getTop(),getY(),getLeft(),getX()可能会是0，或者-1，-2；  而通过post，可以将相关操作加入消息队列中，待addView或者x">
+<meta property="og:updated_time" content="2018-04-23T15:14:33.530Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python">
+<meta name="twitter:title" content="Android">
+<meta name="twitter:description" content="关于new Handler().post（new Runnable()）的实现原理View添加到布局当中会有延时，addView不是立即生效的。  addView之后对相关View进行查找和搜索可能会是空的; 或者相关的属性，比如getTop(),getY(),getLeft(),getX()可能会是0，或者-1，-2；  而通过post，可以将相关操作加入消息队列中，待addView或者x">
 
-<link rel="stylesheet" href="/css/font-awesome.css?t=1524496505950">
-<link rel="stylesheet" href="/css/style.css?t=1524496505950">
+<link rel="stylesheet" href="/css/font-awesome.css?t=1524496506092">
+<link rel="stylesheet" href="/css/style.css?t=1524496506092">
 
 
 
@@ -169,7 +172,7 @@
   <header class="article-header">
     <div class="article-meta">
   <div class="article-date">
-    Apr 15, 2018
+    Apr 8, 2018
   </div>
   <div class="article-categories">
     <i class="fa fa-caret-right"></i>
@@ -183,7 +186,7 @@
 
     <h2 class="article-title">
   
-    Python
+    Android
   
 </h2>
 
@@ -191,16 +194,26 @@
   <div class="article-body markdown">
     
     
-      
+      <h2 id="关于new-Handler-post（new-Runnable-）的实现原理"><a href="#关于new-Handler-post（new-Runnable-）的实现原理" class="headerlink" title="关于new Handler().post（new Runnable()）的实现原理"></a>关于new Handler().post（new Runnable()）的实现原理</h2><p>View添加到布局当中会有延时，addView不是立即生效的。</p>
+<ul>
+<li>addView之后对相关View进行查找和搜索可能会是空的;</li>
+<li>或者相关的属性，比如getTop(),getY(),getLeft(),getX()可能会是0，或者-1，-2；</li>
+</ul>
+<p>而通过post，可以将相关操作加入消息队列中，待addView或者xml相关View初始化完成后进行处理，而post能在主线中回调，是因为在ActivityThread的main方法中已经声明了主线程的消息队列，所以直接post的话是加到了主线程的消息队列中</p>
+<p><a href="https://blog.csdn.net/ly502541243/article/details/52062179/" target="_blank" rel="external">https://blog.csdn.net/ly502541243/article/details/52062179/</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">boolean</span> <span class="title">post</span><span class="params">(Runnable r)</span></span>&#123;</div><div class="line"><span class="keyword">return</span>  sendMessageDelayed(getPostMessage(r), <span class="number">0</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>关于<a href="https://blog.csdn.net/tianyl_melodie/article/details/53424116" target="_blank" rel="external">ActivityThread</a></p>
+<p>也可以通过回调接口判断<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//子View添加</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onViewAdded</span><span class="params">(View child)</span> </span>&#123;&#125;</div><div class="line"><span class="comment">//子View移除</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onViewRemoved</span><span class="params">(View child)</span> </span>&#123;&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">setOnHierarchyChangeListener(<span class="keyword">new</span> OnHierarchyChangeListener() &#123;</div><div class="line">       <span class="meta">@Override</span></div><div class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onChildViewAdded</span><span class="params">(View parent, View child)</span> </span>&#123;</div><div class="line">           </div><div class="line">       &#125;</div><div class="line"></div><div class="line">       <span class="meta">@Override</span></div><div class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onChildViewRemoved</span><span class="params">(View parent, View child)</span> </span>&#123;</div><div class="line"></div><div class="line">       &#125;</div><div class="line">   &#125;);</div></pre></td></tr></table></figure>
     
   </div>
   
     <footer class="article-footer">
       <div class="article-tags">
   
-    <a class="article-tag" href="/tags/Python/">
+    <a class="article-tag" href="/tags/Android/">
       <i class="fa fa-tag"></i>
-      Python
+      Android
     </a>
   
 </div>
@@ -209,23 +222,23 @@
   <div class="article-pagination">
     
       <div class="next-article">
-        <a class="article-link" href="/2018/04/15/旅行的副本/">
+        <a class="article-link" href="/2018/02/27/编译优化/">
           <span class="hint">
             <i class="fa fa-chevron-left"></i>
             旧文章
           </span>
-          <span class="title">旅行</span>
+          <span class="title">编译优化</span>
         </a>
       </div>
     
     
       <div class="prev-article">
-        <a class="article-link" href="/2018/04/15/Android/">
+        <a class="article-link" href="/2018/04/15/旅行的副本/">
           <span class="hint">
             新文章
             <i class="fa fa-chevron-right"></i>
           </span>
-          <span class="title">Android</span>
+          <span class="title">旅行</span>
         </a>
       </div>
     
@@ -245,9 +258,9 @@
     </div>
     <script id="disqus">
         var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2018/04/15/Python/';
-        this.page.identifier = '2018/04/15/Python/';
-        this.page.title = 'Python';
+        this.page.url = 'http://yoursite.com/2018/04/08/180401-0408Fred周报/';
+        this.page.identifier = '2018/04/08/180401-0408Fred周报/';
+        this.page.title = 'Android';
         };
         (function() {
         var d = document, s = d.createElement('script');

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-23T15:12:41.000Z</updated>
+  <updated>2018-04-23T15:14:57.625Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>Android</title>
-    <link href="http://yoursite.com/2018/04/15/180416-0422Fred%E5%91%A8%E6%8A%A5/"/>
-    <id>http://yoursite.com/2018/04/15/180416-0422Fred周报/</id>
-    <published>2018-04-15T09:15:58.000Z</published>
-    <updated>2018-04-23T15:12:41.000Z</updated>
+    <link href="http://yoursite.com/2018/04/23/180416-0422Fred%E5%91%A8%E6%8A%A5/"/>
+    <id>http://yoursite.com/2018/04/23/180416-0422Fred周报/</id>
+    <published>2018-04-23T15:15:58.000Z</published>
+    <updated>2018-04-23T15:14:57.625Z</updated>
     
     <content type="html"><![CDATA[<p>由于易道内存紧张问题，所以尝试用多进程的方式去处理，常用于webview或者加载bitmap多的Activity，</p>
 <p>Android中比较方便就可以分开多个进程,只要在activity节点下设置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:process=<span class="string">":customroom"</span></div></pre></td></tr></table></figure></p>
@@ -104,11 +104,11 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://yoursite.com/2018/04/03/180401-0408Fred%E5%91%A8%E6%8A%A5/"/>
-    <id>http://yoursite.com/2018/04/03/180401-0408Fred周报/</id>
-    <published>2018-04-03T10:43:25.528Z</published>
-    <updated>2018-04-09T08:43:05.000Z</updated>
+    <title>Android</title>
+    <link href="http://yoursite.com/2018/04/08/180401-0408Fred%E5%91%A8%E6%8A%A5/"/>
+    <id>http://yoursite.com/2018/04/08/180401-0408Fred周报/</id>
+    <published>2018-04-08T14:15:58.000Z</published>
+    <updated>2018-04-23T15:14:33.530Z</updated>
     
     <content type="html"><![CDATA[<h2 id="关于new-Handler-post（new-Runnable-）的实现原理"><a href="#关于new-Handler-post（new-Runnable-）的实现原理" class="headerlink" title="关于new Handler().post（new Runnable()）的实现原理"></a>关于new Handler().post（new Runnable()）的实现原理</h2><p>View添加到布局当中会有延时，addView不是立即生效的。</p>
 <ul>
@@ -128,6 +128,10 @@
     
     </summary>
     
+      <category term="technology" scheme="http://yoursite.com/categories/technology/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
   </entry>
   
