@@ -50,24 +50,6 @@
   </entry>
   
   <entry>
-    <title>Android</title>
-    <link href="http://yoursite.com/2018/04/15/Android/"/>
-    <id>http://yoursite.com/2018/04/15/Android/</id>
-    <published>2018-04-15T09:15:58.000Z</published>
-    <updated>2018-04-15T09:39:05.074Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="technology" scheme="http://yoursite.com/categories/technology/"/>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Python</title>
     <link href="http://yoursite.com/2018/04/15/Python/"/>
     <id>http://yoursite.com/2018/04/15/Python/</id>
