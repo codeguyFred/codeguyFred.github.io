@@ -39,8 +39,8 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fred_Kang">
 
-<link rel="stylesheet" href="/css/font-awesome.css?t=1524496399351">
-<link rel="stylesheet" href="/css/style.css?t=1524496399351">
+<link rel="stylesheet" href="/css/font-awesome.css?t=1524496430674">
+<link rel="stylesheet" href="/css/style.css?t=1524496430674">
 
 
 
@@ -235,8 +235,8 @@
 
     <h2 class="article-title">
   
-    <a class="article-link" href="/2018/04/15/Python/">
-      Python
+    <a class="article-link" href="/2018/04/15/Android/">
+      Android
     </a>
   
 </h2>
@@ -247,7 +247,7 @@
     
       
       <div class="readmore">
-        <a href="/2018/04/15/Python/" class="readmore-link">
+        <a href="/2018/04/15/Android/" class="readmore-link">
           阅读更多
         </a>
       </div>
@@ -275,8 +275,8 @@
 
     <h2 class="article-title">
   
-    <a class="article-link" href="/2018/04/15/Android/">
-      Android
+    <a class="article-link" href="/2018/04/15/Python/">
+      Python
     </a>
   
 </h2>
@@ -287,7 +287,7 @@
     
       
       <div class="readmore">
-        <a href="/2018/04/15/Android/" class="readmore-link">
+        <a href="/2018/04/15/Python/" class="readmore-link">
           阅读更多
         </a>
       </div>
@@ -328,6 +328,52 @@
       
       <div class="readmore">
         <a href="/2018/04/15/旅行的副本/" class="readmore-link">
+          阅读更多
+        </a>
+      </div>
+    
+  </div>
+  
+</article>
+         
+        
+          <article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+  <div class="article-date">
+    Apr 3, 2018
+  </div>
+  <div class="article-categories">
+    <i class="fa fa-caret-right"></i>
+    
+  </div>
+</div>
+
+    <h2 class="article-title">
+  
+    <a class="article-link" href="/2018/04/03/180401-0408Fred周报/">
+      
+    </a>
+  
+</h2>
+
+  </header>
+  <div class="article-body markdown">
+    
+    
+      <h2 id="关于new-Handler-post（new-Runnable-）的实现原理"><a href="#关于new-Handler-post（new-Runnable-）的实现原理" class="headerlink" title="关于new Handler().post（new Runnable()）的实现原理"></a>关于new Handler().post（new Runnable()）的实现原理</h2><p>View添加到布局当中会有延时，addView不是立即生效的。</p>
+<ul>
+<li>addView之后对相关View进行查找和搜索可能会是空的;</li>
+<li>或者相关的属性，比如getTop(),getY(),getLeft(),getX()可能会是0，或者-1，-2；</li>
+</ul>
+<p>而通过post，可以将相关操作加入消息队列中，待addView或者xml相关View初始化完成后进行处理，而post能在主线中回调，是因为在ActivityThread的main方法中已经声明了主线程的消息队列，所以直接post的话是加到了主线程的消息队列中</p>
+<p><a href="https://blog.csdn.net/ly502541243/article/details/52062179/" target="_blank" rel="external">https://blog.csdn.net/ly502541243/article/details/52062179/</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">boolean</span> <span class="title">post</span><span class="params">(Runnable r)</span></span>&#123;</div><div class="line"><span class="keyword">return</span>  sendMessageDelayed(getPostMessage(r), <span class="number">0</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>关于<a href="https://blog.csdn.net/tianyl_melodie/article/details/53424116" target="_blank" rel="external">ActivityThread</a></p>
+<p>也可以通过回调接口判断<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//子View添加</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onViewAdded</span><span class="params">(View child)</span> </span>&#123;&#125;</div><div class="line"><span class="comment">//子View移除</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onViewRemoved</span><span class="params">(View child)</span> </span>&#123;&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">setOnHierarchyChangeListener(<span class="keyword">new</span> OnHierarchyChangeListener() &#123;</div><div class="line">       <span class="meta">@Override</span></div><div class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onChildViewAdded</span><span class="params">(View parent, View child)</span> </span>&#123;</div><div class="line">           </div><div class="line">       &#125;</div><div class="line"></div><div class="line">       <span class="meta">@Override</span></div><div class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onChildViewRemoved</span><span class="params">(View parent, View child)</span> </span>&#123;</div><div class="line"></div><div class="line">       &#125;</div><div class="line">   &#125;);</div></pre></td></tr></table></figure>
+      <div class="readmore">
+        <a href="/2018/04/03/180401-0408Fred周报/" class="readmore-link">
           阅读更多
         </a>
       </div>
@@ -442,20 +488,26 @@
         </li>
       
         <li class="recent-post-item">
-          <a class="recent-post-link" href="/2018/04/15/Python/">
-            Python
-          </a>
-        </li>
-      
-        <li class="recent-post-item">
           <a class="recent-post-link" href="/2018/04/15/Android/">
             Android
           </a>
         </li>
       
         <li class="recent-post-item">
+          <a class="recent-post-link" href="/2018/04/15/Python/">
+            Python
+          </a>
+        </li>
+      
+        <li class="recent-post-item">
           <a class="recent-post-link" href="/2018/04/15/旅行的副本/">
             旅行
+          </a>
+        </li>
+      
+        <li class="recent-post-item">
+          <a class="recent-post-link" href="/2018/04/03/180401-0408Fred周报/">
+            
           </a>
         </li>
       
@@ -502,7 +554,7 @@
   <h3 class="widget-title">
     文章归档
   </h3>
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">2018-04</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">2018-02</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">2017-07</a><span class="archive-list-count">1</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">2018-04</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">2018-02</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">2017-07</a><span class="archive-list-count">1</span></li></ul>
 </div>
 
   

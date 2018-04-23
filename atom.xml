@@ -50,24 +50,6 @@
   </entry>
   
   <entry>
-    <title>Python</title>
-    <link href="http://yoursite.com/2018/04/15/Python/"/>
-    <id>http://yoursite.com/2018/04/15/Python/</id>
-    <published>2018-04-15T09:15:58.000Z</published>
-    <updated>2018-04-15T09:39:32.288Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="technology" scheme="http://yoursite.com/categories/technology/"/>
-    
-    
-      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Android</title>
     <link href="http://yoursite.com/2018/04/15/Android/"/>
     <id>http://yoursite.com/2018/04/15/Android/</id>
@@ -86,6 +68,24 @@
   </entry>
   
   <entry>
+    <title>Python</title>
+    <link href="http://yoursite.com/2018/04/15/Python/"/>
+    <id>http://yoursite.com/2018/04/15/Python/</id>
+    <published>2018-04-15T09:15:58.000Z</published>
+    <updated>2018-04-15T09:39:32.288Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="technology" scheme="http://yoursite.com/categories/technology/"/>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>旅行</title>
     <link href="http://yoursite.com/2018/04/15/%E6%97%85%E8%A1%8C%E7%9A%84%E5%89%AF%E6%9C%AC/"/>
     <id>http://yoursite.com/2018/04/15/旅行的副本/</id>
@@ -100,6 +100,34 @@
     
     
       <category term="旅行" scheme="http://yoursite.com/tags/%E6%97%85%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2018/04/03/180401-0408Fred%E5%91%A8%E6%8A%A5/"/>
+    <id>http://yoursite.com/2018/04/03/180401-0408Fred周报/</id>
+    <published>2018-04-03T10:43:25.528Z</published>
+    <updated>2018-04-09T08:43:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="关于new-Handler-post（new-Runnable-）的实现原理"><a href="#关于new-Handler-post（new-Runnable-）的实现原理" class="headerlink" title="关于new Handler().post（new Runnable()）的实现原理"></a>关于new Handler().post（new Runnable()）的实现原理</h2><p>View添加到布局当中会有延时，addView不是立即生效的。</p>
+<ul>
+<li>addView之后对相关View进行查找和搜索可能会是空的;</li>
+<li>或者相关的属性，比如getTop(),getY(),getLeft(),getX()可能会是0，或者-1，-2；</li>
+</ul>
+<p>而通过post，可以将相关操作加入消息队列中，待addView或者xml相关View初始化完成后进行处理，而post能在主线中回调，是因为在ActivityThread的main方法中已经声明了主线程的消息队列，所以直接post的话是加到了主线程的消息队列中</p>
+<p><a href="https://blog.csdn.net/ly502541243/article/details/52062179/" target="_blank" rel="external">https://blog.csdn.net/ly502541243/article/details/52062179/</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">boolean</span> <span class="title">post</span><span class="params">(Runnable r)</span></span>&#123;</div><div class="line"><span class="keyword">return</span>  sendMessageDelayed(getPostMessage(r), <span class="number">0</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>关于<a href="https://blog.csdn.net/tianyl_melodie/article/details/53424116" target="_blank" rel="external">ActivityThread</a></p>
+<p>也可以通过回调接口判断<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//子View添加</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onViewAdded</span><span class="params">(View child)</span> </span>&#123;&#125;</div><div class="line"><span class="comment">//子View移除</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onViewRemoved</span><span class="params">(View child)</span> </span>&#123;&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">setOnHierarchyChangeListener(<span class="keyword">new</span> OnHierarchyChangeListener() &#123;</div><div class="line">       <span class="meta">@Override</span></div><div class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onChildViewAdded</span><span class="params">(View parent, View child)</span> </span>&#123;</div><div class="line">           </div><div class="line">       &#125;</div><div class="line"></div><div class="line">       <span class="meta">@Override</span></div><div class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onChildViewRemoved</span><span class="params">(View parent, View child)</span> </span>&#123;</div><div class="line"></div><div class="line">       &#125;</div><div class="line">   &#125;);</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;关于new-Handler-post（new-Runnable-）的实现原理&quot;&gt;&lt;a href=&quot;#关于new-Handler-post（new-Runnable-）的实现原理&quot; class=&quot;headerlink&quot; title=&quot;关于new Handler().
+    
+    </summary>
+    
     
   </entry>
   
