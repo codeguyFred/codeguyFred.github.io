@@ -47,7 +47,7 @@
   <entry>
     <title><![CDATA[编译优化]]></title>
     <url>%2F2018%2F02%2F27%2F%E7%BC%96%E8%AF%91%E4%BC%98%E5%8C%96%2F</url>
-    <content type="text"><![CDATA[https://droidyue.com/blog/2017/04/16/speedup-gradle-building/ http://www.yopai.com/show-1-184902-1.html http://blog.csdn.net/xiangyunwan/article/details/72677369 http://blog.csdn.net/geyanyan0911/article/details/53117514]]></content>
+    <content type="text"><![CDATA[https://droidyue.com/blog/2017/04/16/speedup-gradle-building/ http://www.yopai.com/show-1-184902-1.html http://blog.csdn.net/xiangyunwan/article/details/72677369 http://blog.csdn.net/geyanyan0911/article/details/53117514 减少编译可能存在的重复步骤，比如通过apt批量生成网络层代码，不需要每次都执行，只需要生成完成后将代码拷贝到相关包下，确切来说通过切片的方式去批量生成代码不太合适，只是借用这种切片的方法v]]></content>
       <categories>
         <category>technology</category>
       </categories>
