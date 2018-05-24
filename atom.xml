@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-24T14:11:57.246Z</updated>
+  <updated>2018-05-24T14:13:16.161Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,10 +20,9 @@
     <link href="http://yoursite.com/2018/05/24/%E9%97%AD%E7%8E%AF/"/>
     <id>http://yoursite.com/2018/05/24/闭环/</id>
     <published>2018-05-24T13:56:01.000Z</published>
-    <updated>2018-05-24T14:11:57.246Z</updated>
+    <updated>2018-05-24T14:13:16.161Z</updated>
     
-    <content type="html"><![CDATA[<p>闭环</p>
-<ul>
+    <content type="html"><![CDATA[<ul>
 <li><p>基础概念<br><a href="https://baike.baidu.com/item/%E9%97%AD%E7%8E%AF/5946597?fr=aladdin" target="_blank" rel="external">闭环(闭环结构）也叫反馈控制系统，是将系统输出量的测量值与所期望的给定值相比较，由此产生一个偏差信号，利用此偏差信号进行调节控制，使输出值尽量接近于期望值。</a></p>
 </li>
 <li><p>互联网的闭环<br><a href="https://www.zhihu.com/question/20624296" target="_blank" rel="external">https://www.zhihu.com/question/20624296</a></p>
@@ -40,9 +39,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;闭环&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;基础概念&lt;br&gt;&lt;a href=&quot;https://baike.baidu.com/item/%E9%97%AD%E7%8E%AF/5946597?fr=aladdin&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;闭环
+      &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;基础概念&lt;br&gt;&lt;a href=&quot;https://baike.baidu.com/item/%E9%97%AD%E7%8E%AF/5946597?fr=aladdin&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;闭环(闭环结构）也叫反馈
     
     </summary>
     
