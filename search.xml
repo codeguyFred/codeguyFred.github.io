@@ -23,6 +23,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[旅行]]></title>
+    <url>%2F2018%2F04%2F15%2F%E6%97%85%E8%A1%8C%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>life</category>
+      </categories>
+      <tags>
+        <tag>旅行</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[180401-0408周报]]></title>
     <url>%2F2018%2F04%2F08%2F180401-0408%E5%91%A8%E6%8A%A5%2F</url>
     <content type="text"><![CDATA[关于new Handler().post（new Runnable()）的实现原理… 关于new Handler().post（new Runnable()）的实现原理View添加到布局当中会有延时，addView不是立即生效的。 addView之后对相关View进行查找和搜索可能会是空的; 或者相关的属性，比如getTop(),getY(),getLeft(),getX()可能会是0，或者-1，-2； 而通过post，可以将相关操作加入消息队列中，待addView或者xml相关View初始化完成后进行处理，而post能在主线中回调，是因为在ActivityThread的main方法中已经声明了主线程的消息队列，所以直接post的话是加到了主线程的消息队列中 https://blog.csdn.net/ly502541243/article/details/52062179/ 123public final boolean post(Runnable r)&#123;return sendMessageDelayed(getPostMessage(r), 0);&#125; 关于ActivityThread 也可以通过回调接口判断1234//子View添加public void onViewAdded(View child) &#123;&#125;//子View移除public void onViewRemoved(View child) &#123;&#125; 1234567891011setOnHierarchyChangeListener(new OnHierarchyChangeListener() &#123; @Override public void onChildViewAdded(View parent, View child) &#123; &#125; @Override public void onChildViewRemoved(View parent, View child) &#123; &#125; &#125;);]]></content>
