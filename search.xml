@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[AWS免费科学上网一年]]></title>
-    <url>%2F2019%2F10%2F28%2Faws%2F</url>
-    <content type="text"><![CDATA[搬瓦工 https://bwh8.net/ Vultr https://www.vultr.com/ jms https://justmysocks1.net/ AWS 注册https://amazonaws-china.com/cn/?nc1=h_ls 1美元信用卡授权https://portal.aws.amazon.com/billing/signup?type=resubscribe#/identityverification 信用卡1美元认证失败的邮件，成功也是这个，需要自行判断，需要看支付方式那里有没有提示 申请进度https://portal.aws.amazon.com/billing/signup?type=resubscribe#/resubscribed 修改支付方式https://console.aws.amazon.com/billing/home?#/paymentmethods 注册成功的邮件（但是不是马上就能用，24后才能用）具体可以查看申请进度页 -选择EC2，如果还没注册通过，则跳转不到下面的页面 选择韩国和启动实例 选择一个免费镜像 学习教程https://amazonaws-china.com/cn/getting-started/use-cases/?awsf.getting-started-use-case=use-case%23websites-apps 申请通过就可以配置一下了 pptphttp://www.zhixinnet.cn/index.php/post/251255.html sshttps://www.textarea.com/Tomaot/2019-nian-zuixin-vultr-yijian-dajian-ss-ssr-jiaoben-xiaobai-kan-le-ye-hui-1173/]]></content>
-      <categories>
-        <category>technology</category>
-      </categories>
-      <tags>
-        <tag>服务器</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[闭环]]></title>
     <url>%2F2018%2F05%2F24%2F%E9%97%AD%E7%8E%AF%2F</url>
     <content type="text"><![CDATA[闭环(闭环结构）也叫反馈控制系统，是将系统输出量的测量值与所期望的给定值相比较，由此产生一个偏差信号，利用此偏差信号进行调节控制，使输出值尽量接近于期望值 基础概念闭环(闭环结构）也叫反馈控制系统，是将系统输出量的测量值与所期望的给定值相比较，由此产生一个偏差信号，利用此偏差信号进行调节控制，使输出值尽量接近于期望值。 互联网的闭环O2O平台将用户引流到线下之后再返回到线上形成闭环https://www.zhihu.com/question/20624296 营销的闭环通过效果检测，让 campaign 中每一个平台、每一项内容的效果可观察可衡量，并用于这个或下个 campaign 的进一步优化 管理的闭环闭环管理是综合闭环系统、管理的封闭原理、管理控制、信息系统等原理形成的一种管理方法。它把全公司的供一产一销管理过程作为一个闭环系统，使系统和子系统内的管理构成连续封闭和回路且使系统活动维持在一个平衡点上，进而使矛盾和问题得到及时解决，决策、控制、反馈、再控制、再反馈。…从而在循环积累中不断提高，促进企业超越自我不断发展 闭环思维做事情到一定节点做出反馈http://www.xinli001.com/info/100376380]]></content>
