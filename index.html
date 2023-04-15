@@ -473,7 +473,14 @@
             background-color: transparent;
             border-radius: 4px;
         }
-
+        #register {
+            position: absolute;
+            right: 60px;
+            top: 10px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+        }
         #setting:hover {
             background: #e7e7e8;
         }
@@ -1321,6 +1328,7 @@
                 <div class="button maximize"></div>
             </div>
             <div class="title">小康机器人</div>
+            <a id="register" href="https://ka.codeguy.cn/#/19/detail" target="_blank">购买会员</a>
             <button id="setting">
                 <svg viewBox="0 0 100 100" style="display:block;" role="img" width="30" height="30">
                     <title>设置</title>
@@ -1345,12 +1353,8 @@
                         </select>
                     </div>
                     <div>
-                        <div>自定义接口</div>
-                        <input class="inputTextClass" placeholder="https://api.openai.com/" value="https://chat.wexin.online/" id="apiHostInput" />
-                    </div>
-                    <div>
-                        <div>自定义API key</div>
-                        <input class="inputTextClass" type="password" placeholder="sk-xxxxxx" id="keyInput"
+                        <div>密码</div>
+                        <input class="inputTextClass" type="password" placeholder="XXXXXXXX-XXXX" id="keyInput"
                             style="-webkit-text-security: disc;" />
                     </div>
                     <div>
@@ -1587,6 +1591,9 @@
         const sendBtnEle = document.getElementById("sendbutton");
         const textarea = document.getElementById("chatinput");
         const settingEle = document.getElementById("setting");
+        
+        const keyInputEle = document.getElementById("keyInput");
+        
         const dialogEle = document.getElementById("setDialog");
         const systemEle = document.getElementById("systemInput");
         const speechServiceEle = document.getElementById("preSetService");
@@ -2300,7 +2307,7 @@
             "image": "当你需要发送图片的时候，请用 markdown 语言生成，不要反斜线，不要代码框，需要使用 unsplash API时，遵循一下格式， https://source.unsplash.com/960x640/? ＜英文关键词＞"
         };
         let modelVersion; // 模型版本
-        let apiHost; // api反代地址
+        let apiHost="https://chat.wexin.online/"; // api反代地址
         let customAPIKey; // 自定义apiKey
         let systemRole; // 自定义系统角色
         let roleNature; // 角色性格
@@ -2743,22 +2750,8 @@
                 localStorage.setItem("modelVersion", modelVersion);
             }
             modelEle.dispatchEvent(new Event("change"));
-            const apiHostEle = document.getElementById("apiHostInput");
-            let localApiHost = localStorage.getItem("APIHost");
-            if (localApiHost) {
-                apiHost = localApiHost;
-                apiHostEle.value = localApiHost;
-            }
-            apiHostEle.onchange = () => {
-                apiHost = apiHostEle.value;
-                if (apiHost.length && !apiHost.endsWith("/")) {
-                    apiHost += "/";
-                    apiHostEle.value = apiHost;
-                }
-                localStorage.setItem("APIHost", apiHost);
-            }
-            apiHostEle.dispatchEvent(new Event("change"));
-            const keyEle = document.getElementById("keyInput");
+           
+           const keyEle = document.getElementById("keyInput");
             let localKey = localStorage.getItem("APIKey");
             if (localKey) {
                 customAPIKey = localKey;
@@ -2769,6 +2762,7 @@
                 localStorage.setItem("APIKey", customAPIKey);
             }
             keyEle.dispatchEvent(new Event("change"));
+            
             if (systemRole === void 0) {
                 let localSystem = localStorage.getItem("system");
                 if (localSystem) {
@@ -3370,7 +3364,8 @@
                 stopLoading();
             }, 30000);
             let headers = {"Content-Type": "application/json"};
-            if (customAPIKey) headers["Authorization"] = "Bearer " + customAPIKey;
+            
+            if (customAPIKey) headers["codeguykey"] = customAPIKey;
             let isRefresh = refreshIdx !== void 0;
             if (isRefresh) {
                 currentResEle = chatlog.children[systemRole ? refreshIdx - 1 : refreshIdx];
@@ -3556,6 +3551,13 @@
             }
         };
         const genFunc = function () {
+            
+            let keyContent = keyInputEle.value.trim();
+            if (keyContent.length == 0) {
+                notyf.error("请先点击右上方购买会员,\n然后右边菜单栏输入密码")
+                return
+            }
+            
             if (recing) {
                 toggleRecEv();
             }
@@ -3589,7 +3591,7 @@
             downRoleController.abort();
         }, 10000);
         const preEle = document.getElementById("preSetSystem");
-        fetch("https://cdn.jsdelivr.net/gh/PlexPt/awesome-chatgpt-prompts-zh/prompts-zh.json", {
+        fetch("./prompts-zh.json", {
             signal: downRoleController.signal
         }).then(async (response) => {
             let res = await response.json();
