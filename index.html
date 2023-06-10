@@ -3617,7 +3617,11 @@
             return
         }
         //请求接口验证token有效性
-        let headers = {"Content-Type": "application/json"};
+        let headers = {"Content-Type": "application/json",
+                            "Access-Control-Allow-Origin": "https://ai.codeguy.cn",
+            "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+            "Access-Control-Allow-Headers":"Content-Type, X-Requested-With"
+        };
         headers["codeguykey"] = customAPIKey;
         fetch("https://ai.codeguy.cn/index/info", {
             method: "POST",
